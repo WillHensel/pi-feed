@@ -1,4 +1,6 @@
 {{define "main"}}
 <h1>HLS Video streaming</h1>
-<video src="/videos/badkitty/badkitty.m3u8" width="400" height="400"></video>
+<video id="video-embed" class="video-js" controls preload="auto" width="750" height="750" data-setup="{}">
+    <source src="/videos/cyberpunk/cyberpunk.m3u8" />
+</video>
 {{end}}

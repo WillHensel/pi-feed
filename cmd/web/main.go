@@ -55,7 +55,7 @@ func main() {
 	mux.HandleFunc("/", home)
 
 	fileServer := http.FileServer(http.Dir("./web/videos"))
-	mux.Handle("/videos/", http.StripPrefix("/videos", fileServer))
+	mux.Handle("/videos/", hlsHeaders(http.StripPrefix("/videos", fileServer)))
 
 	err := http.ListenAndServe(*addr, mux)
 
